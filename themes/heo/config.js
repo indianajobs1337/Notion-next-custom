@@ -95,9 +95,8 @@ const CONFIG = {
   ],
 
   SOCIAL_CARD: true, // 是否显示右侧，点击加入社群按钮
-  SOCIAL_CARD_TITLE_1: 'YouTube Channel',
-  SOCIAL_CARD_TITLE_2: 'Join NetSec Channel for More',
-  SOCIAL_CARD_TITLE_3: 'Click to john',
+  SOCIAL_CARD_TITLE_1: 'API for developers',
+  SOCIAL_CARD_TITLE_3: 'Go to Swagger',
   SOCIAL_CARD_URL: 'https://www.youtube.com/channel/UCPzmia0KbQlmhYuh5r7kWtA?view_as=subscriber',
 
   // *****  以下配置无效，只是预留开发 ****
