@@ -9,6 +9,16 @@ export default function FloatDarkModeButton () {
     return <></>
   }
 
+  // Установка темной темы по умолчанию
+  React.useEffect(() => {
+    const initialDarkMode = true; // Установите true для темной темы, false для светлой
+    saveDarkModeToCookies(initialDarkMode);
+    updateDarkMode(initialDarkMode);
+    
+    const htmlElement = document.getElementsByTagName('html')[0];
+    htmlElement.classList?.add(initialDarkMode ? 'dark' : 'light');
+  }, []);
+  
   // 用户手动设置主题
   const handleChangeDarkMode = () => {
     const newStatus = !isDarkMode
