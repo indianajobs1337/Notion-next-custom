@@ -5,21 +5,21 @@ const CONFIG = {
 
   // 首页顶部通知条滚动内容，如不需要可以留空 []
   NOTICE_BAR: [
-    { title: 'Launching on ProductHunt very soon, support us by clicking on the "Notify me" button', url: 'https://www.producthunt.com/' },
+    { title: 'Support us on ProductHunt', url: 'https://www.producthunt.com/' },
     // { title: 'Visit Blog for More', url: 'https://blog.51sec.org' }
   ],
 
   // 英雄区(首页顶部大卡)
-  HERO_TITLE_1: 'Investigation into the',
-  HERO_TITLE_2: 'overemployed community',
+  HERO_TITLE_1: 'Overemployed',
+  HERO_TITLE_2: 'Investigation',
   HERO_TITLE_3: 'The truth is out there...',
   HERO_TITLE_4: 'The most',
   HERO_TITLE_5: 'Interesting',
-  HERO_TITLE_LINK: '',
+  // HERO_TITLE_LINK: '',
 
   // 英雄区显示三个置顶分类
-  HERO_CATEGORY_1: { title: 'Tools', url: '/tag/Tools' },
-  HERO_CATEGORY_2: { title: 'Sites', url: '/tag/Sites' },
+  HERO_CATEGORY_1: { title: 'FAQ', url: '/tag/Tools' },
+  HERO_CATEGORY_2: { title: 'News', url: '/tag/Sites' },
   HERO_CATEGORY_3: { title: 'Tutorials', url: '/tag/Text' },
 
   // 右侧个人资料卡牌欢迎语，点击可自动切换
