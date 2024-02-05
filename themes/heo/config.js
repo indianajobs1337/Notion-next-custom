@@ -10,12 +10,12 @@ const CONFIG = {
   ],
 
   // 英雄区(首页顶部大卡)
-  HERO_TITLE_1: 'Searching',
-  HERO_TITLE_2: 'Collecting',
-  HERO_TITLE_3: '51SEC.ORG',
-  HERO_TITLE_4: 'Sharing',
-  HERO_TITLE_5: 'Creating',
-  HERO_TITLE_LINK: 'https://51sec.org',
+  HERO_TITLE_1: 'Investigation into the',
+  HERO_TITLE_2: 'overemployed community',
+  HERO_TITLE_3: 'The truth is out there...',
+  HERO_TITLE_4: 'The most',
+  HERO_TITLE_5: 'Interesting',
+  HERO_TITLE_LINK: '',
 
   // 英雄区显示三个置顶分类
   HERO_CATEGORY_1: { title: 'Tools', url: '/tag/Tools' },
