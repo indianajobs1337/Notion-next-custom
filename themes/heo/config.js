@@ -5,7 +5,7 @@ const CONFIG = {
 
   // 首页顶部通知条滚动内容，如不需要可以留空 []
   NOTICE_BAR: [
-    { title: 'Запуск на ProductHunt совсем скоро, поддержите нас нажатием на "Notify me" кнопку', url: 'https://www.producthunt.com/' },
+    { title: 'Launching on ProductHunt very soon, support us by clicking on the "Notify me" button', url: 'https://www.producthunt.com/' },
     // { title: 'Visit Blog for More', url: 'https://blog.51sec.org' }
   ],
 
