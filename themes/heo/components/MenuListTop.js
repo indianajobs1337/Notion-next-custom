@@ -53,7 +53,7 @@ export const MenuListTop = () => {
       tagItems: [],
       password: '',
       show: true
-    },
+    }
     // {
     //   title: 'Sites',
     //   name: 'Sites',
