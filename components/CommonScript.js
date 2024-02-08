@@ -92,7 +92,7 @@ const CommonScript = () => {
             async
             src="https://cdnjs.cloudflare.com/ajax/libs/meting/2.0.1/Meting.min.js"
           />
-        )}
+      )}
     </>
   )
 }

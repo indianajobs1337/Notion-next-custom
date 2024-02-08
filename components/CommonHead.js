@@ -54,7 +54,7 @@ const CommonHead = ({ meta, children }) => {
       {BLOG.COMMENT_WEBMENTION.ENABLE &&
         BLOG.COMMENT_WEBMENTION.AUTH !== '' && (
           <link href={BLOG.COMMENT_WEBMENTION.AUTH} rel="me" />
-        )}
+      )}
 
       {meta?.type === 'Post' && (
         <>
