@@ -9,10 +9,10 @@ export const MenuListTop = () => {
   */
   const links = [
     {
-      to: '/',
+      to: 'https://x-ray.me',
       slug: '/',
-      name: 'Home',
-      title: 'Home',
+      name: 'Main page',
+      title: 'Main page',
       icon: 'fas fa-home',
       id: '88b55837-84a9-44c8-8bee-0e6709724308',
       date: { start_date: '2023-03-23' },
@@ -31,10 +31,10 @@ export const MenuListTop = () => {
       show: true
     },
     {
-      to: '/links',
-      slug: '/links',
-      title: 'Links',
-      name: 'Links',
+      to: 'https://x-ray.me',
+      slug: '/',
+      title: 'API for Developers',
+      name: 'API for Developers',
       icon: 'fas fa-link',
       id: '201507c2-2b50-4168-ad95-70a5fdbe2f14',
       date: {
