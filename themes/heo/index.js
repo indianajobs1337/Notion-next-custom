@@ -118,11 +118,10 @@ const LayoutIndex = props => {
       <div id="post-outer-wrapper" className="px-5 lg:px-0">
         {/* 文章分类条 */}
         <CategoryBar {...props} />
-        {BLOG.POST_LIST_STYLE === 'page' ? (
-          <BlogPostListPage {...props} />
-        ) : (
-          <BlogPostListScroll {...props} />
-        )}
+        {BLOG.POST_LIST_STYLE === 'page'
+          ? (<BlogPostListPage {...props} />)
+          : (<BlogPostListScroll {...props} />
+            )}
       </div>
     </LayoutBase>
   )
