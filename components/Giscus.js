@@ -10,7 +10,7 @@ import Giscus from '@giscus/react'
  */
 
 const GiscusComponent = () => {
-  const { isDarkMode } = useGlobal()
+  const { isDarkMode } = useGlobal(true)
   const theme = isDarkMode ? 'dark' : 'light'
 
   return (

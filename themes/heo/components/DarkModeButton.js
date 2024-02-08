@@ -1,14 +1,15 @@
+import { Moon, Sun } from '@/components/HeroIcons'
 import { useGlobal } from '@/lib/global'
 import { saveDarkModeToCookies } from '@/themes/theme'
-import { Moon, Sun } from '@/components/HeroIcons'
+import { Switch } from '@headlessui/react'
 import { useImperativeHandle } from 'react'
 
 /**
  * 深色模式按钮
  */
-const DarkModeButton = (props) => {
+const DarkModeButton = props => {
   const { cRef, className } = props
-  const { isDarkMode, updateDarkMode } = useGlobal()
+  const { isDarkMode, updateDarkMode } = useGlobal(true)
 
   /**
    * 对外暴露方法
@@ -31,8 +32,30 @@ const DarkModeButton = (props) => {
     htmlElement.classList?.add(newStatus ? 'dark' : 'light')
   }
 
-  return <div onClick={handleChangeDarkMode} className={`${className || ''} cursor-pointer hover: scale-100 hover:bg-black hover:bg-opacity-10 rounded-full w-10 h-10 flex justify-center items-center duration-200 transition-all`}>
-    <div id='darkModeButton' className=' cursor-pointer hover: scale-50 w-10 h-10 '> {isDarkMode ? <Sun /> : <Moon />}</div>
-  </div>
+  return (
+    <>
+      <Moon />
+      <div>
+        <Switch
+          checked={isDarkMode}
+          onChange={() => {
+            handleChangeDarkMode()
+          }}
+          className={`${
+            isDarkMode ? 'bg-[#18171d] border-[rgb(55_65_81)]' : ' bg-white'
+          } relative inline-flex h-5 w-10 items-center rounded-full border-[1px]`}
+        >
+          <span
+            className={`${
+              isDarkMode
+                ? 'translate-x-1 bg-white'
+                : 'translate-x-6 bg-[#e5e7eb] border-[]'
+            } inline-block h-3 w-3 transform rounded-full  transition`}
+          />
+        </Switch>
+      </div>
+      <Sun />
+    </>
+  )
 }
 export default DarkModeButton

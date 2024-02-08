@@ -5,7 +5,10 @@ const CONFIG = {
 
   // 首页顶部通知条滚动内容，如不需要可以留空 []
   NOTICE_BAR: [
-    { title: 'Support us on ProductHunt👆', url: 'https://www.producthunt.com/' },
+    {
+      title: 'Support us on ProductHunt👆',
+      url: 'https://www.producthunt.com/'
+    }
     // { title: 'Visit Blog for More', url: 'https://blog.51sec.org' }
   ],
 
@@ -97,7 +100,8 @@ const CONFIG = {
   SOCIAL_CARD: true, // 是否显示右侧，点击加入社群按钮
   SOCIAL_CARD_TITLE_1: 'API for developers',
   SOCIAL_CARD_TITLE_3: 'Go to Swagger',
-  SOCIAL_CARD_URL: 'https://www.youtube.com/channel/UCPzmia0KbQlmhYuh5r7kWtA?view_as=subscriber',
+  SOCIAL_CARD_URL:
+    'https://www.youtube.com/channel/UCPzmia0KbQlmhYuh5r7kWtA?view_as=subscriber',
 
   // *****  以下配置无效，只是预留开发 ****
   // 菜单配置
@@ -120,7 +124,6 @@ const CONFIG = {
   ARTICLE_RECOMMEND: true, // 文章关联推荐
 
   WIDGET_LATEST_POSTS: true, // 显示最新文章卡
-  WIDGET_ANALYTICS: false, // 显示统计卡
   WIDGET_TO_TOP: true,
   WIDGET_TO_COMMENT: true, // 跳到评论区
   WIDGET_DARK_MODE: true, // 夜间模式

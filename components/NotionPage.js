@@ -1,31 +1,35 @@
-import { NotionRenderer } from 'react-notion-x'
-import dynamic from 'next/dynamic'
 import mediumZoom from '@fisch0920/medium-zoom'
-import React, { useEffect, useRef } from 'react'
+import dynamic from 'next/dynamic'
+import { useEffect, useRef } from 'react'
+import { NotionRenderer } from 'react-notion-x'
 // import { Code } from 'react-notion-x/build/third-party/code'
 import TweetEmbed from 'react-tweet-embed'
 
 import BLOG from '@/blog.config'
-import 'katex/dist/katex.min.css'
 import { mapImgUrl } from '@/lib/notion/mapImage'
 import { isBrowser } from '@/lib/utils'
+import 'katex/dist/katex.min.css'
 
-const Code = dynamic(() =>
-  import('react-notion-x/build/third-party/code').then(async (m) => {
-    return m.Code
-  }), { ssr: false }
+const Code = dynamic(
+  () =>
+    import('react-notion-x/build/third-party/code').then(async m => {
+      return m.Code
+    }),
+  { ssr: false }
 )
 
-const Equation = dynamic(() =>
-  import('@/components/Equation').then(async (m) => {
-    // 化学方程式
-    await import('@/lib/mhchem')
-    return m.Equation
-  }), { ssr: false }
+const Equation = dynamic(
+  () =>
+    import('@/components/Equation').then(async m => {
+      // 化学方程式
+      await import('@/lib/mhchem')
+      return m.Equation
+    }),
+  { ssr: false }
 )
 
 const Pdf = dynamic(
-  () => import('react-notion-x/build/third-party/pdf').then((m) => m.Pdf),
+  () => import('react-notion-x/build/third-party/pdf').then(m => m.Pdf),
   {
     ssr: false
   }
@@ -37,12 +41,17 @@ const PrismMac = dynamic(() => import('@/components/PrismMac'), {
   ssr: false
 })
 
-const Collection = dynamic(() =>
-  import('react-notion-x/build/third-party/collection').then((m) => m.Collection), { ssr: true }
+const Collection = dynamic(
+  () =>
+    import('react-notion-x/build/third-party/collection').then(
+      m => m.Collection
+    ),
+  { ssr: true }
 )
 
 const Modal = dynamic(
-  () => import('react-notion-x/build/third-party/modal').then((m) => m.Modal), { ssr: false }
+  () => import('react-notion-x/build/third-party/modal').then(m => m.Modal),
+  { ssr: false }
 )
 
 const Tweet = ({ id }) => {
@@ -54,11 +63,13 @@ const NotionPage = ({ post, className }) => {
     autoScrollToTarget()
   }, [])
 
-  const zoom = typeof window !== 'undefined' && mediumZoom({
-    container: '.notion-viewport',
-    background: 'rgba(0, 0, 0, 0.2)',
-    margin: getMediumZoomMargin()
-  })
+  const zoom =
+    typeof window !== 'undefined' &&
+    mediumZoom({
+      container: '.notion-viewport',
+      background: 'rgba(0, 0, 0, 0.2)',
+      margin: getMediumZoomMargin()
+    })
   const zoomRef = useRef(zoom ? zoom.clone() : null)
 
   useEffect(() => {
@@ -66,14 +77,18 @@ const NotionPage = ({ post, className }) => {
     if (JSON.parse(BLOG.POST_DISABLE_GALLERY_CLICK)) {
       setTimeout(() => {
         if (isBrowser()) {
-          const imgList = document?.querySelectorAll('.notion-collection-card-cover img')
+          const imgList = document?.querySelectorAll(
+            '.notion-collection-card-cover img'
+          )
           if (imgList && zoomRef.current) {
             for (let i = 0; i < imgList.length; i++) {
-              (zoomRef.current).attach(imgList[i])
+              zoomRef.current.attach(imgList[i])
             }
           }
 
-          const cards = document.getElementsByClassName('notion-collection-card')
+          const cards = document.getElementsByClassName(
+            'notion-collection-card'
+          )
           for (const e of cards) {
             e.removeAttribute('href')
           }
@@ -86,23 +101,25 @@ const NotionPage = ({ post, className }) => {
     return <>{post?.summary || ''}</>
   }
 
-  return <div id='notion-article' className={`mx-auto ${className || ''}`}>
-    <NotionRenderer
-      recordMap={post.blockMap}
-      mapPageUrl={mapPageUrl}
-      mapImageUrl={mapImgUrl}
-      components={{
-        Code,
-        Collection,
-        Equation,
-        Modal,
-        Pdf,
-        Tweet
-      }} />
+  return (
+    <div id="notion-article" className={`mx-auto ${className || ''}`}>
+      <NotionRenderer
+        recordMap={post.blockMap}
+        mapPageUrl={mapPageUrl}
+        mapImageUrl={mapImgUrl}
+        components={{
+          Code,
+          Collection,
+          Equation,
+          Modal,
+          Pdf,
+          Tweet
+        }}
+      />
 
-      <PrismMac/>
-
-  </div>
+      <PrismMac />
+    </div>
+  )
 }
 
 /**
