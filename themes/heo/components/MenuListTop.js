@@ -1,6 +1,6 @@
 import { MenuItemDrop } from './MenuItemDrop'
 
-export const MenuListTop = props => {
+export const MenuListTop = () => {
   // Ссылки в хедере.
   /*
     Чтобы изменить url ссылки - меняем значения ключей to и slug
